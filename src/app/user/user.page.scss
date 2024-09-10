@@ -1,0 +1,20 @@
+.rounded-image {
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%; 
+    display: block;
+    margin: 0 auto; 
+    object-fit: cover;
+  }
+
+  .center-text {
+    text-align: center;
+  }
+  
+  .center-content {
+    display: flex;
+    margin-top: 185px;
+    flex-direction: column;
+  }
+  
+  

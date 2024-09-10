@@ -1,16 +1,52 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { TabsComponent } from './tabs/tabs.component';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
+  {
+    path: '',
+    component: TabsComponent,
+    children: [
+      {
+        path: 'home',
+        loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+      },
+      {
+        path: 'user',
+        loadChildren: () => import('./user/user.module').then(m => m.UserPageModule)
+      },
+      {
+        path: 'create-user',
+        loadChildren: () => import('./create-user/create-user.module').then(m => m.CreateUserPageModule)
+      },
+      {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full'
+      }
+    ]
+  }
+  // {
+  //   path: 'home',
+  //   loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  // },
+  // {
+  //   path: 'user',
+  //   loadChildren: () => import('./user/user.module').then( m => m.UserPageModule)
+  // },
+  // {
+  //   path: 'create-user',
+  //   loadChildren: () => import('./create-user/create-user.module').then( m => m.CreateUserPageModule)
+  // },
 ];
 
 @NgModule({
