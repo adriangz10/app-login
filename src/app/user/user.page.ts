@@ -10,16 +10,14 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./user.page.scss'],
 })
 export class UserPage {
+  nombre: string = '';
   newNombre: string = '';
   newEmail: string = '';
   newPassword: string = '';
   formularioEdicion: FormGroup;
 
   constructor(
-    private router: Router,
-    private authService: AuthService,
-    private alertController: AlertController,
-    private fb: FormBuilder
+    private router: Router, private authService: AuthService, private alertController: AlertController, private fb: FormBuilder
   ) {
     this.formularioEdicion = this.fb.group({
       nombre: [''],
@@ -72,6 +70,10 @@ export class UserPage {
     });
 
     await alert.present();
+  }
+
+  ionViewWillEnter() {
+    this.nombre = this.authService.getNombre()
   }
 }
 

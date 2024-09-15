@@ -8,6 +8,10 @@ const routes: Routes = [
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
+    path: 'create-user',
+    loadChildren: () => import('./create-user/create-user.module').then(m => m.CreateUserPageModule)
+  },
+  {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
@@ -24,10 +28,7 @@ const routes: Routes = [
         path: 'user',
         loadChildren: () => import('./user/user.module').then(m => m.UserPageModule)
       },
-      {
-        path: 'create-user',
-        loadChildren: () => import('./create-user/create-user.module').then(m => m.CreateUserPageModule)
-      },
+      
       {
         path: '',
         redirectTo: 'home',
@@ -35,18 +36,6 @@ const routes: Routes = [
       }
     ]
   }
-  // {
-  //   path: 'home',
-  //   loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  // },
-  // {
-  //   path: 'user',
-  //   loadChildren: () => import('./user/user.module').then( m => m.UserPageModule)
-  // },
-  // {
-  //   path: 'create-user',
-  //   loadChildren: () => import('./create-user/create-user.module').then( m => m.CreateUserPageModule)
-  // },
 ];
 
 @NgModule({

@@ -1,8 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      <ion-icon (click)="irHome()" name="arrow-back"></ion-icon>
-    </ion-title>
+    <ion-icon (click)="irHome()" name="arrow-back" style="margin-left: 13px;"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
@@ -12,7 +10,7 @@
       <img class="rounded-image" alt="Silhouette of mountains"
         src="https://ionicframework.com/docs/img/demos/card-media.png" />
       <ion-card-header class="center-text">
-        <ion-card-title>Editar Datos del Usuario</ion-card-title>
+        <ion-card-title>{{ nombre }} edita tus datos de usuario</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <ion-list>

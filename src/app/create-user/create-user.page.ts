@@ -13,11 +13,7 @@ export class CreateUserPage {
   public email: string = '';
   public password: string = '';
 
-  constructor(
-    private router: Router, 
-    private alertController: AlertController, 
-    private authService: AuthService 
-  ) {}
+  constructor(private router: Router, private alertController: AlertController, private authService: AuthService) {}
 
   irUser() {
     this.router.navigate(['/login'])
@@ -25,7 +21,6 @@ export class CreateUserPage {
 
   crearUsuario() {
     if (this.email && this.password && this.nombre) {
-      // Almacenar los datos en localStorage usando AuthService
       this.authService.setUser(this.nombre, this.email, this.password);
       
       this.router.navigate(['/login']);

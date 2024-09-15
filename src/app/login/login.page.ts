@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -12,14 +12,14 @@ export class LoginPage {
   public email: string = '';
   public password: string = '';
 
-  constructor(private router: Router, private alertController: AlertController, private authService: AuthService) {}
+  constructor(private router: Router, private alertController: AlertController, private authService: AuthService, private navCtrl: NavController) {}
 
   login() {
     const storedEmail = this.authService.getEmail();
     const storedPassword = this.authService.getPassword();
 
     if (this.email === storedEmail && this.password === storedPassword) {
-      this.router.navigate(['/home'], { replaceUrl: true });
+      this.navCtrl.navigateRoot('/home');
     } else {
       this.presentAlert();
     }

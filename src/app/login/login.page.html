@@ -1,44 +1,23 @@
 <ion-content class="ion-padding login-background">
   <div class="center-content">
+    <p class="ion-text-center">Inicia sesión en tu cuenta</p>
     <div class="login-container">
       <ion-list>
         <ion-item class="custom-input">
-          <ion-input [(ngModel)]="email" type="email" labelPlacement="stacked" label="Email" placeholder="email@domain.com">
+          <ion-input [(ngModel)]="email" type="email" labelPlacement="stacked" label="Correo Electrónico" placeholder="email@domain.com">
             <ion-icon slot="start" name="mail-outline" aria-hidden="true"></ion-icon>
           </ion-input>
         </ion-item>
 
         <ion-item class="custom-input">
-          <ion-input [(ngModel)]="password" type="password" labelPlacement="stacked" label="Contraseña" placeholder="********">
+          <ion-input [(ngModel)]="password" type="password" labelPlacement="stacked" label="Contraseña" placeholder="***********">
             <ion-icon slot="start" name="lock-closed" aria-hidden="true"></ion-icon>
-            <ion-button fill="clear" slot="end" aria-label="Show/hide">
-              <ion-icon slot="icon-only" name="eye" aria-hidden="true"></ion-icon>
-            </ion-button>
           </ion-input>
         </ion-item>
 
-        <ion-button expand="full" class="custom-button" (click)="login()">Iniciar Sesión</ion-button>
-        <p class="register-text">No registrado? <a (click)="irCreateUser()">Crea una cuenta</a></p>
+        <ion-button expand="full" (click)="login()">Iniciar Sesión</ion-button>
+        <p class="ion-text-center">No tienes cuenta? <a (click)="irCreateUser()">Registrate aquí</a></p>
       </ion-list>
     </div>
   </div>
 </ion-content>
-<!-- 
-<div class="container">
-  <div class="login-register">
-    <div class="form-container login">
-      <h2>Login</h2>
-      <form>
-        <div class="input-group">
-          <input type="text" placeholder="Username" />
-        </div>
-        <div class="input-group">
-          <input type="password" placeholder="Password" />
-        </div>
-        <button type="submit" class="submit-btn">Login</button>
-        <a href="#" class="forgot-password">Forgot?</a>
-        <a href="#" class="register-link">Register</a>
-      </form>
-    </div>
-  </div>
-</div> -->
